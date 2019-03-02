@@ -23,13 +23,13 @@ void FFlowControl::Tick(float DeltaTime)
 	}
 
 	// Execute Ticking functions
-	for (auto It = TickingFunctions.CreateIterator(); It; ++It)
+	for (auto It = TickingEvents.CreateIterator(); It; ++It)
 	{
 		if (!(*It).ContextObject.IsValid()) {
 			It.RemoveCurrent();
 		}
 		else {
-			bool Result = (*It).TickableFunction(DeltaTime);
+			bool Result = (*It).TickingFunction(DeltaTime);
 			if (!Result) {
 				It.RemoveCurrent();
 			}

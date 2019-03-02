@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Tickable.h"
 
-
+DECLARE_DELEGATE(FInvokeFunc);
 
 /**
  * 
@@ -21,13 +21,13 @@ private:
 	};
 	TArray<FInvokeEvent> InvokeEvents;
 
-	typedef TFunction<bool(float DeltaTime)> FTickingFunc;
+	typedef TFunction<bool(float DeltaTime)> FTickingFunction;
 	struct FTickingEvent
 	{
 		TWeakObjectPtr<UObject> ContextObject;
-		FTickingFunc TickableFunction;
+		FTickingFunction TickingFunction;
 	};
-	TArray<FTickingEvent> TickingFunctions;
+	TArray<FTickingEvent> TickingEvents;
 
 private:
 	FFlowControl() = default;
@@ -48,7 +48,7 @@ public:
 	{
 		float TimeElapsed = 0;
 		float Alpha = 0;
-		auto TickFunction = [Start, End, LerpFunction, Action, TimeElapsed, Alpha, LerpTime](float DeltaTime) mutable
+		auto TickFunction = [LerpTime, Start, End, LerpFunction, Action, TimeElapsed, Alpha](float DeltaTime) mutable
 		{
 			TimeElapsed += DeltaTime;
 			Alpha = FMath::Clamp<float>((TimeElapsed / LerpTime), 0.0, 1.0);
@@ -58,7 +58,7 @@ public:
 			}
 			return true;
 		};
-		Instance.TickingFunctions.Add({ Context, TickFunction });
+		Instance.TickingEvents.Add({ Context, TickFunction });
 	}
 
 private:
