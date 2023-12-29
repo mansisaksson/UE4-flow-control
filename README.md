@@ -5,13 +5,13 @@ This library adds some quality of life features to the Unreal Engine 4 blueprint
 # Custom Nodes
 
 ## Invoke When
-![Invoke When](https://nextcloud.mansisaksson.com:1443/index.php/s/wrgcKB2qJnLDGcw/preview)
+![Invoke When](https://raw.githubusercontent.com/mansisaksson/UE4-flow-control/master/Docs/Capture.PNG)
 
 ## Lerp Float
-![Lerp Float](https://nextcloud.mansisaksson.com:1443/index.php/s/kpDecoSt5XJJCSo/preview)
+![Lerp Float](https://raw.githubusercontent.com/mansisaksson/UE4-flow-control/master/Docs/Capture2.PNG)
 
 ## Lerp Vector
-![Lerp Vector](https://nextcloud.mansisaksson.com:1443/index.php/s/cXkTjBkG92LGwf3/preview)
+![Lerp Vector](https://raw.githubusercontent.com/mansisaksson/UE4-flow-control/master/Docs/Capture3.PNG)
 
 ## Lerp Rotator
-![Lerp Rotator](https://nextcloud.mansisaksson.com:1443/index.php/s/qafy4JA3QxKn5tn/preview)
+![Lerp Rotator](https://raw.githubusercontent.com/mansisaksson/UE4-flow-control/master/Docs/Capture4.PNG)
